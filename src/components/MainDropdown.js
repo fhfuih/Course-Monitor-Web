@@ -31,16 +31,22 @@ const Divider = withStyles(styles)(_Divider);
 
 class MainDropdown extends Component {
   handleSemesterChange(sel) {
-    this.props.selectSemester(sel);
-    this.props.requestCourses();
+    if (!this.props.semester || sel.label !== this.props.semester.label || sel.value !== this.props.semester.value) {
+      this.props.selectSemester(sel);
+      this.props.requestCourses();
+    }
   }
   handleCourseChange(sel) {
-    this.props.selectCourse(sel);
-    this.props.requestSections();
+    if (!this.props.course || sel.label !== this.props.course.label || sel.value !== this.props.course.value) {
+      this.props.selectCourse(sel);
+      this.props.requestSections();
+    }
   }
   handleSectionChange(sel) {
-    this.props.selectSection(sel);
-    this.props.requestQuota();
+    if (!this.props.section || sel.label !== this.props.section.label || sel.value !== this.props.section.value) {
+      this.props.selectSection(sel);
+      this.props.requestQuota();
+    }
   }
   render() {
     return (
