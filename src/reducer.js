@@ -39,7 +39,6 @@ const reducer = (state = defaultState, action) => {
     case actionType.UPDATE_SEMESTER_LIST:
       return {
         ...state,
-        loading: false,
         ...clearSemester,
         ...clearCourse,
         ...clearSection,
@@ -49,7 +48,6 @@ const reducer = (state = defaultState, action) => {
     case actionType.UPDATE_COURSE_LIST:
       return {
         ...state,
-        loading: false,
         ...clearCourse,
         ...clearSection,
         courseList: action.value.courses,
@@ -60,7 +58,6 @@ const reducer = (state = defaultState, action) => {
     case actionType.UPDATE_SECTION_LIST:
       return {
         ...state,
-        loading: false,
         ...clearSection,
         sectionList: action.value,
         quota: []
@@ -68,7 +65,6 @@ const reducer = (state = defaultState, action) => {
     case actionType.UPDATE_QUOTA:
       return {
         ...state,
-        loading: false,
         quota: action.value
       }
     case actionType.SELECT_SEMESTER:

@@ -49,40 +49,48 @@ class App extends Component {
     // })
     serverSim('SEMESTER', json => {
       this.props.updateSemesters(json.data);
+    }, () => {
+      this.props.setLoading(false);
     })
   }
   requestSections = () => {
     this.props.setLoading(true);
-    requests.section(this.props.semester, this.props.course, json => {
+    // requests.section(this.props.semester, this.props.course, json => {
+    //   this.props.updateSections(json.data);
+    // }, () => {
+    //   this.props.setLoading(false);
+    // })
+    serverSim('SECTION', json => {
       this.props.updateSections(json.data);
     }, () => {
       this.props.setLoading(false);
     })
-    // serverSim('SECTION', json => {
-    //   this.props.updateSections(json.data);
-    // })
   }
   requestCourses = () => {
     this.props.setLoading(true);
-    requests.course(this.props.semester, json => {
+    // requests.course(this.props.semester, json => {
+    //   this.props.updateCourses(json.data);
+    // }, () => {
+    //   this.props.setLoading(false);
+    // })
+    serverSim('COURSE', json => {
       this.props.updateCourses(json.data);
     }, () => {
       this.props.setLoading(false);
     })
-    // serverSim('COURSE', json => {
-    //   this.props.updateCourses(json.data);
-    // })
   }
   requestQuota = () => {
     this.props.setLoading(true);
-    requests.quota(this.props.semester, this.props.course, this.props.section, json => {
+    // requests.quota(this.props.semester, this.props.course, this.props.section, json => {
+    //   this.props.updateQuota(json.data);
+    // }, () => {
+    //   this.props.setLoading(false);
+    // })
+    serverSim('QUOTA', json => {
       this.props.updateQuota(json.data);
     }, () => {
       this.props.setLoading(false);
     })
-    // serverSim('QUOTA', json => {
-    //   this.props.updateQuota(json.data);
-    // })
   }
   componentDidMount() {
     this.requestSemsters();
