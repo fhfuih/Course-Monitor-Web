@@ -12,6 +12,7 @@ import Appbar from './components/Appbar';
 import MainDropdown from './components/MainDropdown';
 import QuotaChart from './components/QuotaChart';
 import Paper from '@material-ui/core/Paper';
+import Footer from './components/Footer';
 
 import serverSim from './testData/serverSimulate';
 import requests from './requests';
@@ -113,6 +114,9 @@ class App extends Component {
               <Paper className={this.props.classes.paper}>
                 <QuotaChart />
               </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Footer />
             </Grid>
           </Container>
         </main>
