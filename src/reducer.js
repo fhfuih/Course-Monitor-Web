@@ -2,15 +2,15 @@ import { actionType } from './actions'
 
 const clearSemester = {
   semesterList: [],
-  semester: undefined
+  semester: ""
 }
 const clearCourse = {
   courseList: [],
-  course: undefined
+  course: ""
 }
 const clearSection = {
   sectionList: [],
-  section: undefined
+  section: ""
 }
 
 const defaultState = {
