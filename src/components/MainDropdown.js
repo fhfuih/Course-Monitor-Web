@@ -50,7 +50,7 @@ class MainDropdown extends Component {
   }
   render() {
     return (
-      <Typography component='div' variant='h4' gutterBottom className={this.props.classes.breadcrumb}>
+      <Typography component='div' variant='h4' className={this.props.classes.breadcrumb}>
         {/* Spring 2019 / MATH1013 / L01 */}
         <form autoComplete='off'>
           <BaseDropdown 

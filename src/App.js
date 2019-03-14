@@ -28,9 +28,11 @@ const styles = {
 class Container extends PureComponent {
   render() {
     return (
-      <Grid container spacing={24} justify='center'>
+      <Grid container justify='center'>
         <Grid item xs={10}>
-          {this.props.children}
+          <Grid container spacing={24} justify='center'>
+            {this.props.children}
+          </Grid>
         </Grid>
       </Grid>
     )
@@ -92,17 +94,20 @@ class App extends Component {
         <Appbar />
         <main className={this.props.classes.content}>
           <Container container spacing={24} justify='center'>
-            <MainDropdown 
-              requestCourses={this.requestCourses}
-              requestSections={this.requestSections}
-              requestQuota={this.requestQuota}
-            />
-            <Paper className={this.props.classes.paper}>
-              <QuotaChart />
-            </Paper>
+            <Grid item xs={12}>
+              <MainDropdown 
+                requestCourses={this.requestCourses}
+                requestSections={this.requestSections}
+                requestQuota={this.requestQuota}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Paper className={this.props.classes.paper}>
+                <QuotaChart />
+              </Paper>
+            </Grid>
           </Container>
         </main>
-
       </div>
     );
   }
