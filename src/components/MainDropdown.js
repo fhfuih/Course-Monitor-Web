@@ -70,7 +70,7 @@ class MainDropdown extends Component {
             name='section'
             disabled={this.props.disabled}
             data={this.props.sectionList}
-            // value={this.props.section}
+            value={this.props.section}
             onChange={this.handleSectionChange.bind(this)}
           />
         </form>
