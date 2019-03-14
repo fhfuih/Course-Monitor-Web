@@ -16,8 +16,8 @@ import pref from '../preference'
 const styles = theme => ({
   root: {
     position: 'absolute',
-    right: 0,
-    top: 0,
+    right: '-1rem',
+    top: '-1rem',
     zIndex: theme.zIndex.drawer,
   },
   avail: {
@@ -61,8 +61,7 @@ class QuotaChartFilter extends PureComponent {
     return (
       <div className={this.props.classes.root}>
         <IconButton
-          color='primary'
-          aria-label='more'
+          aria-label='filter'
           aria-owns={opened ? 'filter-menu' : undefined}
           aria-haspopup={true}
           onClick={this.handleClick}
