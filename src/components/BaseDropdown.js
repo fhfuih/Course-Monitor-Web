@@ -14,10 +14,10 @@ const styles = {
     border: 'none',
     backgroundColor: 'transparent'
   }),
-  indicatorSeparator: (provided) => ({
-    ...provided,
-    display: 'none'
-  })
+}
+
+const components = {
+  IndicatorSeparator: false
 }
 
 class ReactSelectDropdown extends PureComponent {
@@ -30,11 +30,11 @@ class ReactSelectDropdown extends PureComponent {
           placeholder={this.props.text}
           isDisabled={this.props.disabled || !this.props.data.length}
           isSearchable
-          // isClearable
           options={this.props.data}
           value={this.props.value}
           onChange={this.props.onChange}
           styles={styles}
+          components={components}
         />
       </NoSsr>
     )
