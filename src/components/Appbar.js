@@ -45,7 +45,7 @@ class Appbar extends React.PureComponent {
     const { classes } = this.props;
     return (
       <AppBar position='absolute' color='primary'>
-        {this.props.loading && <LinearProgress color='secondary' style={{zIndex: 2000}}/>}
+        {this.props.loading && <LinearProgress color='secondary' variant='query' style={{zIndex: 2000, position: 'absolute', top: 0, left: 0, right: 0}}/>}
 
         <Toolbar>
           <IconButton 
