@@ -22,7 +22,7 @@ const styles = theme => ({
   appTitle: {
     paddingLeft: 10
   }
-})
+});
 
 class Appbar extends React.PureComponent {
   state = {
@@ -33,13 +33,13 @@ class Appbar extends React.PureComponent {
     this.setState({
       anchorEl: event.currentTarget
     });
-  }
+  };
 
   handleClose = () => {
     this.setState({
       anchorEl: null
     });
-  }
+  };
 
   render() {
     const { classes } = this.props;

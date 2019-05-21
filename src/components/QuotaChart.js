@@ -14,7 +14,7 @@ const styles = {
   root: {
     position: 'relative'
   }
-}
+};
 
 const xAxisFmt = timeFormat('%d/%m %H:%M');
 const legendLabelFmt = timeFormat('%d/%m/%Y %H:%M:%S');

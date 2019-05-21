@@ -41,7 +41,7 @@ class Container extends PureComponent {
 }
 
 class App extends Component {
-  requestSemsters = () => {
+  requestSemesters = () => {
     this.props.setLoading(true);
     // requests.semester(json => {
     //   this.props.updateSemesters(json.data);
@@ -94,7 +94,7 @@ class App extends Component {
     })
   }
   componentDidMount() {
-    this.requestSemsters();
+    this.requestSemesters();
   }
   render() {
     return (

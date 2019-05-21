@@ -39,22 +39,22 @@ const styles = theme => ({
     }
   },
   checked: {}
-})
+});
 
 class QuotaChartFilter extends PureComponent {
   state = {
     anchorEl: null
-  }
+  };
   handleClick = event => {
     this.setState({
       anchorEl: event.currentTarget
     })
-  }
+  };
   handleClose = () => {
     this.setState({
       anchorEl: null
     })
-  }
+  };
   render() {
     const {anchorEl} = this.state;
     const opened = Boolean(anchorEl);
@@ -119,7 +119,7 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispathToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     toggleAvail: () => dispatch(toggleFilter('avail')),
     toggleEnroll: () => dispatch(toggleFilter('enroll')),
@@ -128,4 +128,4 @@ function mapDispathToProps(dispatch) {
   }
 }
 
-export default withStyles(styles)(connect(mapStateToProps, mapDispathToProps)(QuotaChartFilter));
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(QuotaChartFilter));

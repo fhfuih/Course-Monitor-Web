@@ -14,15 +14,14 @@ const styles = {
     border: 'none',
     backgroundColor: 'transparent'
   }),
-}
+};
 
 const components = {
   IndicatorSeparator: false
-}
+};
 
 class ReactSelectDropdown extends PureComponent {
   render() {
-    // console.log(this.props.name);
     return (
       <NoSsr>
         <ReactSelect 
