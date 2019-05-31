@@ -26,15 +26,15 @@ function requestSemesterList(cb, final) {
 }
 
 function requestCourseList(semCode, cb, final) {
-  basicRequest(pref.dataServer + `semester/?semCode=${semCode}`, cb, final)
+  basicRequest(pref.dataServer + `semester?semCode=${semCode}`, cb, final)
 }
 
 function requestSectionList(semCode, courseCode, cb, final) {
-  basicRequest(pref.dataServer + `courseSection/?semCode=${semCode}&courseCode=${courseCode}`, cb, final)
+  basicRequest(pref.dataServer + `courseSection?semCode=${semCode}&courseCode=${courseCode}`, cb, final)
 }
 
 function requestQuotaData(semCode, courseCode, section, cb, final) {
-  basicRequest(pref.dataServer + `courseSection/?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`, cb, final)
+  basicRequest(pref.dataServer + `sectionData?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`, cb, final)
 }
 
 const a = {
