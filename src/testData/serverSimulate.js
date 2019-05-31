@@ -3,31 +3,32 @@ import courses from './semesterData.json';
 import sections from './courseSection_COMP1021.json';
 import quota from './sectionData_COMP1021_L1.json';
 
-export default function(type, cb, final) {
+function basicRequest(data, cb, final) {
   setTimeout(() => {
-    switch(type) {
-      case 'SEMESTER':
-        // console.log('Requesting semesters');
-        cb(semesters);
-        final();
-        break;
-      case 'COURSE':
-        // console.log('Requesting courses');
-        cb(courses);
-        final();
-        break;
-      case 'SECTION':
-        // console.log('Requesting sections');
-        cb(sections);
-        final();
-        break;
-      case 'QUOTA':
-        // console.log('Requesting quota');
-        cb(quota);
-        final();
-        break;
-      default:
-        alert("What the heck?")
-    }
+    cb(data);
+    final();
   }, 3000);
 }
+
+function requestSemesterList(cb, final) {
+  basicRequest(semesters, cb, final)
+}
+
+function requestCourseList(semCode, cb, final) {
+  basicRequest(courses, cb, final)
+}
+
+function requestSectionList(semCode, courseCode, cb, final) {
+  basicRequest(sections, cb, final)
+}
+
+function requestQuotaData(semCode, courseCode, section, cb, final) {
+  basicRequest(quota, cb, final)
+}
+
+export default {
+  semester: requestSemesterList,
+  course: requestCourseList,
+  section: requestSectionList,
+  quota: requestQuotaData
+};
