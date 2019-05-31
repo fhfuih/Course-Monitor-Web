@@ -30,24 +30,6 @@ class _Divider extends PureComponent {
 const Divider = withStyles(styles)(_Divider);
 
 class MainDropdown extends Component {
-  handleSemesterChange(sel) {
-    if (!this.props.semester || sel.label !== this.props.semester.label || sel.value !== this.props.semester.value) {
-      this.props.selectSemester(sel);
-      this.props.requestCourses();
-    }
-  }
-  handleCourseChange(sel) {
-    if (!this.props.course || sel.label !== this.props.course.label || sel.value !== this.props.course.value) {
-      this.props.selectCourse(sel);
-      this.props.requestSections();
-    }
-  }
-  handleSectionChange(sel) {
-    if (!this.props.section || sel.label !== this.props.section.label || sel.value !== this.props.section.value) {
-      this.props.selectSection(sel);
-      this.props.requestQuota();
-    }
-  }
   render() {
     return (
       <Typography component='div' variant='h4' className={this.props.classes.breadcrumb}>
@@ -59,7 +41,7 @@ class MainDropdown extends Component {
             disabled={this.props.disabled}
             data={this.props.semesterList}
             value={this.props.semester}
-            onChange={this.handleSemesterChange.bind(this)}
+            onChange={this.props.selectSemester}
           />
           <Divider />
           <BaseDropdown 
@@ -68,7 +50,7 @@ class MainDropdown extends Component {
             disabled={this.props.disabled}
             data={this.props.courseList}
             value={this.props.course}
-            onChange={this.handleCourseChange.bind(this)}
+            onChange={this.props.selectCourse}
           />
           <Divider />
           <BaseDropdown 
@@ -77,7 +59,7 @@ class MainDropdown extends Component {
             disabled={this.props.disabled}
             data={this.props.sectionList}
             value={this.props.section}
-            onChange={this.handleSectionChange.bind(this)}
+            onChange={this.props.selectSection}
           />
         </form>
       </Typography>

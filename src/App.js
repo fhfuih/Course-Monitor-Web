@@ -77,6 +77,19 @@ class App extends Component {
   componentDidMount() {
     this.requestSemesters();
   }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.semester !== this.props.semester && this.props.semester !== undefined) {
+      this.requestCourses();
+    }
+    if (prevProps.course !== this.props.course && this.props.course !== undefined) {
+      this.requestSections();
+    }
+    if (prevProps.section !== this.props.section && this.props.section !== undefined) {
+      this.requestQuota();
+    }
+  }
+
   render() {
     return (
       <div>
@@ -85,11 +98,7 @@ class App extends Component {
         <main className={this.props.classes.content}>
           <Container container spacing={24} justify='center'>
             <Grid item xs={12}>
-              <MainDropdown 
-                requestCourses={this.requestCourses}
-                requestSections={this.requestSections}
-                requestQuota={this.requestQuota}
-              />
+              <MainDropdown />
             </Grid>
             <Grid item xs={12}>
               <Paper className={this.props.classes.paper}>
