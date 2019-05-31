@@ -4,6 +4,17 @@ This is the WIP front-end UI for the WIP project [Course Monitor](https://github
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Before You Start
+
+Create a `.env.local` file at the root directory of this repo. Specify the API of the quota data server using `REACT_APP_DATASERVER`.
+
+For example, you have cloned the backend part of this project and run on `localhost:8000`, the default Django port. 
+You will need to write
+
+    REACT_APP_DATASERVER=http://localhost:8000/
+
+in the `.env.local` file. If you do not specify this environment variable, the app will use `http://localhost:8000/` as default.
+
 ## Available Scripts
 
 In the project directory, you can run:
