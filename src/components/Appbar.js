@@ -73,10 +73,22 @@ class Appbar extends React.PureComponent {
             onClose={this.handleClose}
           >
             <MenuItem onClick={this.handleClose}>
-              <a href='https://github.com/ppfish45/Course-Monitor/' target='_blank' rel='noopener noreferrer'>Core scripts</a>
+              <Typography variant='div'
+                          component='a'
+                          href='https://github.com/ppfish45/Course-Monitor/'
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                Scraper
+              </Typography>
+              {/*<a href='https://github.com/ppfish45/Course-Monitor/' target='_blank' rel='noopener noreferrer'>Core scripts</a>*/}
             </MenuItem>
             <MenuItem onClick={this.handleClose}>
-              <a href='https://github.com/fhfuih/Course-Monitor-Web/' target='_blank' rel='noopener noreferrer'>Web UI</a>
+              <a href='https://github.com/fhfuih/Course-Monitor-Web/' target='_blank' rel='noopener noreferrer'>
+                <Typography variant='div'>
+                  Web UI
+                </Typography>
+              </a>
+              {/*<a href='https://github.com/fhfuih/Course-Monitor-Web/' target='_blank' rel='noopener noreferrer'>Web UI</a>*/}
             </MenuItem>
           </Menu>
         </Toolbar>
