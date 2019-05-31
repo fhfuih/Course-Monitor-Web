@@ -1,5 +1,5 @@
 const config = {
-  dataServer: 'http://10.89.234.109:8000/',
+  dataServer: 'http://localhost:8000/',
   quotaChartStyle: {
     quota: "#ccc",
     avail: "#82ca9d",
