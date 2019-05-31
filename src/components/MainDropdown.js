@@ -86,13 +86,12 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    selectSemester: value=> dispatch(selectSemester(value)),
-    selectCourse: value=> dispatch(selectCourse(value)),
-    selectSection: value=> dispatch(selectSection(value)),
-  }
-}
+const mapDispatchToProps = {
+  selectSemester,
+  selectCourse,
+  selectSection
+};
+
 
 
 export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(MainDropdown));

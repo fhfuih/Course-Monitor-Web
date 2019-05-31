@@ -37,11 +37,9 @@ function requestQuotaData(semCode, courseCode, section, cb, final) {
   basicRequest(pref.dataServer + `sectionData?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`, cb, final)
 }
 
-const a = {
+export default {
   semester: requestSemesterList,
   course: requestCourseList,
   section: requestSectionList,
   quota: requestQuotaData
-}
-
-export default a;
+};

@@ -9,7 +9,7 @@ import App from './App';
 // import App from './StaticExample'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer)
+const store = createStore(reducer);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

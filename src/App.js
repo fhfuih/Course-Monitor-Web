@@ -24,7 +24,7 @@ const styles = {
   paper: {
     padding: '2rem'
   }
-}
+};
 
 class Container extends PureComponent {
   render() {
@@ -48,7 +48,7 @@ class App extends Component {
     }, () => {
       this.props.setLoading(false);
     })
-  }
+  };
   requestSections = () => {
     this.props.setLoading(true);
     requests.section(this.props.semester, this.props.course, json => {
@@ -56,7 +56,7 @@ class App extends Component {
     }, () => {
       this.props.setLoading(false);
     })
-  }
+  };
   requestCourses = () => {
     this.props.setLoading(true);
     requests.course(this.props.semester, json => {
@@ -64,7 +64,7 @@ class App extends Component {
     }, () => {
       this.props.setLoading(false);
     })
-  }
+  };
   requestQuota = () => {
     this.props.setLoading(true);
     requests.quota(this.props.semester, this.props.course, this.props.section, json => {
@@ -73,7 +73,8 @@ class App extends Component {
     }, () => {
       this.props.setLoading(false);
     })
-  }
+  };
+
   componentDidMount() {
     this.requestSemesters();
   }
