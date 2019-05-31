@@ -117,9 +117,9 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    semester: state.semester,
-    course: state.course,
-    section: state.section,
+    semester: state.semester.value,
+    course: state.course.value,
+    section: state.section.value,
     loading: state.loading
   }
 }
