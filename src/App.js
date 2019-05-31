@@ -14,7 +14,7 @@ import QuotaChart from './components/QuotaChart';
 import Paper from '@material-ui/core/Paper';
 import Footer from './components/Footer';
 
-import serverSim from './testData/serverSimulate';
+// import requests from './testData/serverSimulate';
 import requests from './requests';
 
 const styles = {
@@ -43,12 +43,7 @@ class Container extends PureComponent {
 class App extends Component {
   requestSemesters = () => {
     this.props.setLoading(true);
-    // requests.semester(json => {
-    //   this.props.updateSemesters(json.data);
-    // }, () => {
-    //   this.props.setLoading(false);
-    // })
-    serverSim('SEMESTER', json => {
+    requests.semester(json => {
       this.props.updateSemesters(json.data);
     }, () => {
       this.props.setLoading(false);
@@ -56,12 +51,7 @@ class App extends Component {
   }
   requestSections = () => {
     this.props.setLoading(true);
-    // requests.section(this.props.semester, this.props.course, json => {
-    //   this.props.updateSections(json.data);
-    // }, () => {
-    //   this.props.setLoading(false);
-    // })
-    serverSim('SECTION', json => {
+    requests.section(this.props.semester, this.props.course, json => {
       this.props.updateSections(json.data);
     }, () => {
       this.props.setLoading(false);
@@ -69,12 +59,7 @@ class App extends Component {
   }
   requestCourses = () => {
     this.props.setLoading(true);
-    // requests.course(this.props.semester, json => {
-    //   this.props.updateCourses(json.data);
-    // }, () => {
-    //   this.props.setLoading(false);
-    // })
-    serverSim('COURSE', json => {
+    requests.course(this.props.semester, json => {
       this.props.updateCourses(json.data);
     }, () => {
       this.props.setLoading(false);
@@ -82,12 +67,8 @@ class App extends Component {
   }
   requestQuota = () => {
     this.props.setLoading(true);
-    // requests.quota(this.props.semester, this.props.course, this.props.section, json => {
-    //   this.props.updateQuota(json.data);
-    // }, () => {
-    //   this.props.setLoading(false);
-    // })
-    serverSim('QUOTA', json => {
+    requests.quota(this.props.semester, this.props.course, this.props.section, json => {
+      console.log(json);
       this.props.updateQuota(json.data);
     }, () => {
       this.props.setLoading(false);
