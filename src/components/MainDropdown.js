@@ -37,7 +37,7 @@ class MainDropdown extends Component {
         <form autoComplete='off'>
           <BaseDropdown 
             text='Semester'
-            name='semster'
+            name='semester'
             disabled={this.props.disabled}
             data={this.props.semesterList}
             value={this.props.semester}
