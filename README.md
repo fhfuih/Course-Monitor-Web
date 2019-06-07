@@ -4,7 +4,7 @@ This is the WIP front-end UI for the WIP project [Course Monitor](https://github
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Before You Start
+## Before You Start (to build)
 
 Create a `.env` file at the root directory of this repo. Specify the API of the quota data server using `REACT_APP_DATASERVER`.
 
@@ -14,6 +14,8 @@ You will need to write
     REACT_APP_DATASERVER=http://localhost:8000/
 
 in the `.env` file. If you do not specify this environment variable, the app will use `http://localhost:8000/` as default.
+
+You must rerun the development version or rebuild the production version after you change/set the environment variable.
 
 ## Available Scripts
 
