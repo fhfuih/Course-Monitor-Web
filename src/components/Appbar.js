@@ -55,7 +55,7 @@ class Appbar extends React.PureComponent {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' color='inherit' className={classes.appTitle}>
-            Course Monitor
+            HKUST Course Monitor
           </Typography>
           <div className={classes.grow} />
           <IconButton 
