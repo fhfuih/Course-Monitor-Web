@@ -68,7 +68,6 @@ class App extends Component {
   requestQuota = () => {
     this.props.setLoading(true);
     requests.quota(this.props.semester, this.props.course, this.props.section, json => {
-      console.log(json);
       this.props.updateQuota(json.data);
     }, () => {
       this.props.setLoading(false);
