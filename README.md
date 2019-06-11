@@ -15,11 +15,15 @@ You will need to write
 
 in the `.env` file. If you do not specify this environment variable, the app will use `http://localhost:8000/` as default.
 
-You must rerun the development version or rebuild the production version after you change/set the environment variable.
+**You must rerun the development version or rebuild the production version after you change/set the environment variable.**
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the required dependencies.
 
 ### `npm start`
 
