@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-const xAxisFmt = timeFormat('%d/%m %H:%M');
+const xAxisFmt = timeFormat('%d/%m');
 const legendLabelFmt = timeFormat('%d/%m/%Y %H:%M:%S');
 
 class QuotaChart extends Component {
