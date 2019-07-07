@@ -7,6 +7,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from 'mdi-material-ui/Menu';
@@ -73,22 +74,26 @@ class Appbar extends React.PureComponent {
             onClose={this.handleClose}
           >
             <MenuItem onClick={this.handleClose}>
-              <Typography variant='div'
-                          component='a'
-                          href='https://github.com/ppfish45/Course-Monitor/'
-                          target='_blank'
-                          rel='noopener noreferrer'>
+              <Link
+                color='inherit'
+                underline='none'
+                href='https://github.com/ppfish45/Course-Monitor/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Scraper
-              </Typography>
-              {/*<a href='https://github.com/ppfish45/Course-Monitor/' target='_blank' rel='noopener noreferrer'>Core scripts</a>*/}
+              </Link>
             </MenuItem>
             <MenuItem onClick={this.handleClose}>
-              <a href='https://github.com/fhfuih/Course-Monitor-Web/' target='_blank' rel='noopener noreferrer'>
-                <Typography variant='div'>
-                  Web UI
-                </Typography>
-              </a>
-              {/*<a href='https://github.com/fhfuih/Course-Monitor-Web/' target='_blank' rel='noopener noreferrer'>Web UI</a>*/}
+              <Link
+                  color='inherit'
+                  underline='none'
+                  href='https://github.com/fhfuih/Course-Monitor-Web/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+              >
+                Web UI
+              </Link>
             </MenuItem>
           </Menu>
         </Toolbar>
