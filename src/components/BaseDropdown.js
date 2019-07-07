@@ -6,7 +6,7 @@ import ReactSelect from 'react-select';
 const styles = {
   container: (provided) => ({
     ...provided,
-    width: 250,
+    width: 260,
     display: 'inline-block'
   }),
   control: (provided) => ({
