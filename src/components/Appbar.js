@@ -13,18 +13,21 @@ import MenuIcon from 'mdi-material-ui/Menu';
 
 import AppDrawer from "./AppDrawer";
 
-const styles = {
+const styles = theme => ({
+  appBar: {
+    zIndex: theme.zIndex.modal + 1,
+  },
   appTitle: {
     paddingLeft: 10
   },
   loadingBar: {
-    zIndex: 2000,
+    zIndex: theme.zIndex.tooltip,
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
   },
-};
+});
 
 class Appbar extends React.PureComponent {
   state = {
@@ -44,7 +47,7 @@ class Appbar extends React.PureComponent {
     const { drawerOpen } = this.state;
     return (
       <>
-        <AppBar position='absolute' color='primary'>
+        <AppBar position='absolute' color='primary' className={classes.appBar}>
           {this.props.loading && <LinearProgress color='secondary' variant='query' classes={classes.loadingBar}/>}
 
           <Toolbar>

@@ -28,6 +28,7 @@ const styles = theme => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  paddingTop: theme.mixins.toolbar,
 });
 
 class AppDrawer extends PureComponent {
@@ -44,6 +45,7 @@ class AppDrawer extends PureComponent {
     const { githubCollapse } = this.state;
     return (
       <Drawer open={open} onClose={onClose} className={classes.drawer} classes={{ paper: classes.drawerPaper }}>
+        <div className={classes.paddingTop} />
         <List>
           <ListItem button>
             <ListItemIcon>
