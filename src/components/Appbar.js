@@ -7,14 +7,9 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from 'mdi-material-ui/Menu';
-import GithubCircleIcon from 'mdi-material-ui/GithubCircle';
-
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem'
 
 import AppDrawer from "./AppDrawer";
 
