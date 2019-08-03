@@ -19,9 +19,6 @@ import MenuItem from '@material-ui/core/MenuItem'
 import AppDrawer from "./AppDrawer";
 
 const styles = {
-  grow: {
-    flexGrow: 1
-  },
   appTitle: {
     paddingLeft: 10
   },
@@ -36,20 +33,7 @@ const styles = {
 
 class Appbar extends React.PureComponent {
   state = {
-    anchorEl: null,
     drawerOpen: false,
-  };
-
-  handleClick = event => {
-    this.setState({
-      anchorEl: event.currentTarget
-    });
-  };
-
-  handleClose = () => {
-    this.setState({
-      anchorEl: null
-    });
   };
 
   onCloseDrawer = () => {
@@ -62,7 +46,7 @@ class Appbar extends React.PureComponent {
 
   render() {
     const { classes } = this.props;
-    const { anchorEl, drawerOpen } = this.state;
+    const { drawerOpen } = this.state;
     return (
       <>
         <AppBar position='absolute' color='primary'>
@@ -75,44 +59,6 @@ class Appbar extends React.PureComponent {
             <Typography variant='h6' color='inherit' className={classes.appTitle}>
               HKUST Course Monitor
             </Typography>
-            <div className={classes.grow} />
-            <IconButton
-              color='inherit'
-              aria-owns={anchorEl ? 'github-dropdown' : undefined}
-              aria-haspopup='true'
-              onClick={this.handleClick}
-            >
-              <GithubCircleIcon />
-            </IconButton>
-            <Menu
-              id='github-dropdown'
-              open={Boolean(anchorEl)}
-              anchorEl={anchorEl}
-              onClose={this.handleClose}
-            >
-              <MenuItem onClick={this.handleClose}>
-                <Link
-                  color='inherit'
-                  underline='none'
-                  href='https://github.com/ppfish45/Course-Monitor/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Scraper
-                </Link>
-              </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <Link
-                  color='inherit'
-                  underline='none'
-                  href='https://github.com/fhfuih/Course-Monitor-Web/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Web UI
-                </Link>
-              </MenuItem>
-            </Menu>
           </Toolbar>
         </AppBar>
         <AppDrawer open={drawerOpen} onClose={this.onCloseDrawer} />

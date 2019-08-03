@@ -64,11 +64,11 @@ class AppDrawer extends PureComponent {
           </ListItem>
           <Collapse in={githubCollapse} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button component="a" href="#" className={classes.nested}>
+              <ListItem button className={classes.nested} component="a" href="https://github.com/ppfish45/Course-Monitor/" target="_blank">
                 <ListItemIcon><CloudIcon /></ListItemIcon>
                 <ListItemText primary="Backend Server" />
               </ListItem>
-              <ListItem button component="a" href="#" className={classes.nested}>
+              <ListItem button className={classes.nested} component="a" href="https://github.com/fhfuih/Course-Monitor-Web/" target="_blank">
                 <ListItemIcon><BrushIcon /></ListItemIcon>
                 <ListItemText primary="Frontend UI" />
               </ListItem>
