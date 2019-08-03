@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 // import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import GithubCircle from 'mdi-material-ui/GithubCircle';
+import CodeIcon from '@material-ui/icons/Code';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper'
@@ -102,7 +102,7 @@ function App(props) {
           </Typography>
           <div className={classes.grow} />
           <IconButton color='inherit'>
-            <GithubCircle />
+            <CodeIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
