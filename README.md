@@ -1,6 +1,6 @@
 # Course Monitor Web
 
-This is the WIP front-end UI for the WIP project [Course Monitor](https://github.com/ppfish45/Course-Monitor).
+This is the front-end UI for the WIP project [Course Monitor](https://github.com/ppfish45/Course-Monitor).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
