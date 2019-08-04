@@ -53,7 +53,7 @@ class Appbar extends PureComponent {
             <IconButton color="inherit" onClick={this.onToggleDrawer}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.appTitle}>
+            <Typography variant="h6" component="h1" color="inherit" className={classes.appTitle}>
               HKUST Course Monitor
             </Typography>
           </Toolbar>
