@@ -1,44 +1,54 @@
 import React, { PureComponent } from 'react';
-
+import PropTypes from 'prop-types';
 import NoSsr from '@material-ui/core/NoSsr';
 import ReactSelect from 'react-select';
+import reactSelectDataType from '../propTypes/reactSelectDataType';
 
 const styles = {
-  container: (provided) => ({
+  container: provided => ({
     ...provided,
     width: 260,
-    display: 'inline-block'
+    display: 'inline-block',
   }),
-  control: (provided) => ({
+  control: provided => ({
     ...provided,
     border: 'none',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   }),
 };
 
 const components = {
-  IndicatorSeparator: false
+  IndicatorSeparator: false,
 };
 
 class ReactSelectDropdown extends PureComponent {
   render() {
+    const { name, text, disabled, data, value, onChange } = this.props;
     return (
       <NoSsr>
-        <ReactSelect 
-          name={this.props.name}
-          placeholder={this.props.text}
-          isDisabled={this.props.disabled || !this.props.data.length}
+        <ReactSelect
+          name={name}
+          placeholder={text}
+          isDisabled={disabled || !data.length}
           isSearchable
-          options={this.props.data}
-          value={this.props.value}
-          onChange={this.props.onChange}
+          options={data}
+          value={value}
+          onChange={onChange}
           styles={styles}
           components={components}
         />
       </NoSsr>
-    )
+    );
   }
 }
 
-// export default withStyles(styles)(BaseDropdown);
+ReactSelectDropdown.propTypes = {
+  name: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  data: PropTypes.arrayOf(reactSelectDataType).isRequired,
+  value: reactSelectDataType,
+  onChange: PropTypes.func.isRequired,
+};
+
 export default ReactSelectDropdown;

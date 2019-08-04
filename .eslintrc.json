@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": false
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "prettier",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier/react"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "import",
+        "prettier",
+        "react",
+        "jsx-a11y"
+    ],
+    "rules": {
+        "linebreak-style": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/require-default-props": [0],
+        "prettier/prettier": [
+            "warn",
+            {
+                "singleQuote": true,
+                "printWidth": 100,
+                "trailingComma": "all"
+            }
+        ]
+    }
+}

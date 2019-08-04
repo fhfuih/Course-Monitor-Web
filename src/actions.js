@@ -1,34 +1,34 @@
 const actionType = {
-  UPDATE_SEMESTER_LIST: Symbol(),
-  UPDATE_COURSE_LIST: Symbol(),
-  UPDATE_SECTION_LIST: Symbol(),
-  UPDATE_QUOTA: Symbol(),
-  SET_LOADING: Symbol(),
-  SELECT_SEMESTER: Symbol(),
-  SELECT_COURSE: Symbol(),
-  SELECT_SECTION: Symbol(),
-  TOGGLE_FILTER: Symbol()
+  UPDATE_SEMESTER_LIST: Symbol('UPDATE_SEMESTER_LIST'),
+  UPDATE_COURSE_LIST: Symbol('UPDATE_COURSE_LIST'),
+  UPDATE_SECTION_LIST: Symbol('UPDATE_SECTION_LIST'),
+  UPDATE_QUOTA: Symbol('UPDATE_QUOTA'),
+  SET_LOADING: Symbol('SET_LOADING'),
+  SELECT_SEMESTER: Symbol('SELECT_SEMESTER'),
+  SELECT_COURSE: Symbol('SELECT_COURSE'),
+  SELECT_SECTION: Symbol('SELECT_SECTION'),
+  TOGGLE_FILTER: Symbol('TOGGLE_FILTER'),
 };
 
 function setLoading(value) {
   return {
     type: actionType.SET_LOADING,
-    value
-  }
+    value,
+  };
 }
 
 function updateSemesterList(value) {
   return {
     type: actionType.UPDATE_SEMESTER_LIST,
-    value
-  }
+    value,
+  };
 }
 
 function updateCourseList(value) {
   return {
     type: actionType.UPDATE_COURSE_LIST,
-    value
-  }
+    value,
+  };
 }
 
 function updateSectionList(value) {
@@ -41,47 +41,47 @@ function updateSectionList(value) {
 function updateQuota(value) {
   return {
     type: actionType.UPDATE_QUOTA,
-    value
-  }
+    value,
+  };
 }
 
 function selectSemester(value) {
   return {
     type: actionType.SELECT_SEMESTER,
-    value
-  }
+    value,
+  };
 }
 
 function selectCourse(value) {
   return {
     type: actionType.SELECT_COURSE,
-    value
-  }
+    value,
+  };
 }
 
 function selectSection(value) {
   return {
     type: actionType.SELECT_SECTION,
-    value
-  }
+    value,
+  };
 }
 
 function toggleFilter(value) {
   return {
     type: actionType.TOGGLE_FILTER,
-    value
-  }
+    value,
+  };
 }
 
-export { 
-  actionType, 
-  setLoading, 
-  updateSemesterList, 
-  updateCourseList, 
+export {
+  actionType,
+  setLoading,
+  updateSemesterList,
+  updateCourseList,
   updateSectionList,
   updateQuota,
   selectSemester,
   selectCourse,
   selectSection,
-  toggleFilter
+  toggleFilter,
 };

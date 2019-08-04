@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Collapse from "@material-ui/core/Collapse";
-import Divider from "@material-ui/core/Divider";
+import Collapse from '@material-ui/core/Collapse';
+import Divider from '@material-ui/core/Divider';
 import ChartIcon from '@material-ui/icons/Timeline';
 import PersonIcon from '@material-ui/icons/Person';
 import InfoIcon from '@material-ui/icons/Info';
@@ -37,19 +37,24 @@ class AppDrawer extends PureComponent {
   };
 
   onToggleGithubCollapse = () => {
-    this.setState({ githubCollapse: !this.state.githubCollapse });
+    this.setState(state => ({ githubCollapse: !state.githubCollapse }));
   };
 
   render() {
     const { classes, open, onClose } = this.props;
     const { githubCollapse } = this.state;
     return (
-      <Drawer open={open} onClose={onClose} className={classes.drawer} classes={{ paper: classes.drawerPaper }}>
+      <Drawer
+        open={open}
+        onClose={onClose}
+        className={classes.drawer}
+        classes={{ paper: classes.drawerPaper }}
+      >
         <div className={classes.paddingTop} />
         <List>
           <ListItem button>
             <ListItemIcon>
-              <ChartIcon/>
+              <ChartIcon />
             </ListItemIcon>
             <ListItemText primary="Course Monitor" />
           </ListItem>
@@ -66,12 +71,28 @@ class AppDrawer extends PureComponent {
           </ListItem>
           <Collapse in={githubCollapse} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested} component="a" href="https://github.com/ppfish45/Course-Monitor/" target="_blank">
-                <ListItemIcon><CloudIcon /></ListItemIcon>
+              <ListItem
+                button
+                className={classes.nested}
+                component="a"
+                href="https://github.com/ppfish45/Course-Monitor/"
+                target="_blank"
+              >
+                <ListItemIcon>
+                  <CloudIcon />
+                </ListItemIcon>
                 <ListItemText primary="Backend Server" />
               </ListItem>
-              <ListItem button className={classes.nested} component="a" href="https://github.com/fhfuih/Course-Monitor-Web/" target="_blank">
-                <ListItemIcon><BrushIcon /></ListItemIcon>
+              <ListItem
+                button
+                className={classes.nested}
+                component="a"
+                href="https://github.com/fhfuih/Course-Monitor-Web/"
+                target="_blank"
+              >
+                <ListItemIcon>
+                  <BrushIcon />
+                </ListItemIcon>
                 <ListItemText primary="Frontend UI" />
               </ListItem>
             </List>
@@ -95,11 +116,13 @@ class AppDrawer extends PureComponent {
           </ListItem>
         </List>
       </Drawer>
-    )
+    );
   }
 }
 
 AppDrawer.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
 };

@@ -1,45 +1,37 @@
-import pref from './preference'
+import pref from './preference';
 
-function basicRequest(url, cb, final) {
-  fetch(url, {
+async function basicRequest(url) {
+  const response = await fetch(url, {
     method: 'GET',
     // credentials: "same-origin"
-  })
-  .then(response => {
-    if (!response.ok) {
-      alert('HTTP Error while requesting data: ' + response.status + ' ' + response.statusText)
-    }
-    return response.json()
-  })
-  .then(json => {
-    cb(json);
-    final();
-  })
-  .catch(e => {
-    final();
-    alert('Server Error while requesting data: ' + e + '\nSee the console for details.');
-  })
+  });
+  if (!response.ok) {
+    alert(`HTTP Error while requesting data: ${response.status} ${response.statusText}`);
+    // throw new Error(`HTTP Error while requesting data: ${response.status} ${response.statusText}`);
+    return null;
+  }
+  return response.json();
 }
 
-function requestSemesterList(cb, final) {
-  basicRequest(pref.dataServer + 'start', cb, final)
+async function requestSemesterList() {
+  return basicRequest(`${pref.dataServer}/start`);
 }
 
-function requestCourseList(semCode, cb, final) {
-  basicRequest(pref.dataServer + `semester?semCode=${semCode}`, cb, final)
+async function requestCourseList(semCode) {
+  return basicRequest(`${pref.dataServer}/semester?semCode=${semCode}`);
 }
 
-function requestSectionList(semCode, courseCode, cb, final) {
-  basicRequest(pref.dataServer + `courseSection?semCode=${semCode}&courseCode=${courseCode}`, cb, final)
+async function requestSectionList(semCode, courseCode) {
+  return basicRequest(`${pref.dataServer}/courseSection?semCode=${semCode}&courseCode=${courseCode}`);
 }
 
-function requestQuotaData(semCode, courseCode, section, cb, final) {
-  basicRequest(pref.dataServer + `sectionData?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`, cb, final)
+async function requestQuotaData(semCode, courseCode, section) {
+  return basicRequest(`${pref.dataServer}/sectionData?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`);
 }
 
 export default {
   semester: requestSemesterList,
   course: requestCourseList,
   section: requestSectionList,
-  quota: requestQuotaData
+  quota: requestQuotaData,
 };
