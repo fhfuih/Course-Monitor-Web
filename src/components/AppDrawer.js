@@ -77,6 +77,7 @@ class AppDrawer extends PureComponent {
                 component="a"
                 href="https://github.com/ppfish45/Course-Monitor/"
                 target="_blank"
+                rel="noopener"
               >
                 <ListItemIcon>
                   <CloudIcon />
@@ -89,6 +90,7 @@ class AppDrawer extends PureComponent {
                 component="a"
                 href="https://github.com/fhfuih/Course-Monitor-Web/"
                 target="_blank"
+                rel="noopener"
               >
                 <ListItemIcon>
                   <BrushIcon />
