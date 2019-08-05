@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { Link } from '@reach/router';
+import withStyles from '@material-ui/core/styles/withStyles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -52,7 +53,7 @@ class AppDrawer extends PureComponent {
       >
         <div className={classes.paddingTop} />
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/">
             <ListItemIcon>
               <ChartIcon />
             </ListItemIcon>
@@ -104,13 +105,13 @@ class AppDrawer extends PureComponent {
         <Divider />
 
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/about">
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary="About" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/policy">
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
@@ -123,7 +124,6 @@ class AppDrawer extends PureComponent {
 }
 
 AppDrawer.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,

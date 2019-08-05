@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { withStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import { selectSemester, selectCourse, selectSection } from '../actions';
-import reactSelectDataType from '../propTypes/reactSelectDataType';
+import { selectSemester, selectCourse, selectSection } from '../../actions';
+import reactSelectDataType from '../../propTypes/reactSelectDataType';
 import BaseDropdown from './BaseDropdown';
 
 const styles = {
@@ -28,7 +28,6 @@ class _Divider extends PureComponent {
 }
 
 _Divider.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
 };
 
@@ -86,7 +85,6 @@ class MainDropdown extends Component {
 }
 
 MainDropdown.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   disabled: PropTypes.bool.isRequired,
   semester: reactSelectDataType,

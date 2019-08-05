@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import FilterIcon from '@material-ui/icons/MoreVert';
-import { toggleFilter } from '../actions';
-import pref from '../preference';
-import filterType from '../propTypes/filterType';
+import { toggleFilter } from '../../actions';
+import pref from '../../preference';
+import filterType from '../../propTypes/filterType';
 
 const styles = theme => ({
   root: {
@@ -106,7 +106,6 @@ class QuotaChartFilter extends PureComponent {
 }
 
 QuotaChartFilter.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   filter: filterType.isRequired,
   toggleAvail: PropTypes.func.isRequired,

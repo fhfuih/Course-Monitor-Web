@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import NoSsr from '@material-ui/core/NoSsr';
 import ReactSelect from 'react-select';
-import reactSelectDataType from '../propTypes/reactSelectDataType';
+import reactSelectDataType from '../../propTypes/reactSelectDataType';
 
-const styles = {
+const styles = width => ({
   container: provided => ({
     ...provided,
-    width: 260,
+    width,
     display: 'inline-block',
   }),
   control: provided => ({
@@ -15,7 +15,7 @@ const styles = {
     border: 'none',
     backgroundColor: 'transparent',
   }),
-};
+});
 
 const components = {
   IndicatorSeparator: false,
@@ -23,7 +23,7 @@ const components = {
 
 class ReactSelectDropdown extends PureComponent {
   render() {
-    const { name, text, disabled, data, value, onChange } = this.props;
+    const { name, text, width = 260, disabled, data, value, onChange } = this.props;
     return (
       <NoSsr>
         <ReactSelect
@@ -34,7 +34,7 @@ class ReactSelectDropdown extends PureComponent {
           options={data}
           value={value}
           onChange={onChange}
-          styles={styles}
+          styles={styles(width)}
           components={components}
         />
       </NoSsr>
@@ -45,10 +45,15 @@ class ReactSelectDropdown extends PureComponent {
 ReactSelectDropdown.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  width: PropTypes.number,
   disabled: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(reactSelectDataType).isRequired,
   value: reactSelectDataType,
   onChange: PropTypes.func.isRequired,
+};
+
+ReactSelectDropdown.defaultProps = {
+  width: 260,
 };
 
 export default ReactSelectDropdown;

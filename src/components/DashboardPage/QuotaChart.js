@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import NoSsr from '@material-ui/core/NoSsr';
 import {
   ResponsiveContainer,
@@ -15,9 +15,9 @@ import {
   Area,
 } from 'recharts';
 import { timeFormat } from 'd3-time-format';
-import pref from '../preference';
-import filterType from '../propTypes/filterType';
-import seriesDatumType from '../propTypes/seriesDatumType';
+import pref from '../../preference';
+import filterType from '../../propTypes/filterType';
+import seriesDatumType from '../../propTypes/seriesDatumType';
 import QuotaChartFilter from './QuotaChartFilter';
 
 const styles = {
