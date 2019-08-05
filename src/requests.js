@@ -18,15 +18,26 @@ async function requestSemesterList() {
 }
 
 async function requestCourseList(semCode) {
-  return basicRequest(`${pref.dataServer}/semester?semCode=${semCode}`);
+  const url = new URL(`${pref.dataServer}/semester`);
+  url.searchParams.append('semCode', semCode);
+  return basicRequest(url);
 }
 
 async function requestSectionList(semCode, courseCode) {
-  return basicRequest(`${pref.dataServer}/courseSection?semCode=${semCode}&courseCode=${courseCode}`);
+  const url = new URL(`${pref.dataServer}/courseSection`);
+  url.searchParams.append('semCode', semCode);
+  url.searchParams.append('courseCode', courseCode);
+  return basicRequest(url);
 }
 
-async function requestQuotaData(semCode, courseCode, section) {
-  return basicRequest(`${pref.dataServer}/sectionData?semCode=${semCode}&courseCode=${courseCode}&section=${encodeURIComponent(section)}`);
+async function requestQuotaData(semCode, courseCode, section, startTime, endTime) {
+  const url = new URL(`${pref.dataServer}/sectionData`);
+  url.searchParams.append('semCode', semCode);
+  url.searchParams.append('courseCode', courseCode);
+  url.searchParams.append('section', section);
+  url.searchParams.append('startTime', startTime);
+  url.searchParams.append('endTime', endTime);
+  return basicRequest(url);
 }
 
 export default {

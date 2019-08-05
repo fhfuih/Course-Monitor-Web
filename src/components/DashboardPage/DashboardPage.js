@@ -73,9 +73,17 @@ class DashboardPage extends Component {
   };
 
   requestQuota = async () => {
-    const { setLoading: set, updateQuota: update, semester, course, section } = this.props;
+    const {
+      setLoading: set,
+      updateQuota: update,
+      semester,
+      course,
+      section,
+      startTime,
+      endTime,
+    } = this.props;
     set(true);
-    const json = await requests.quota(semester.value, course.value, section.value);
+    const json = await requests.quota(semester.value, course.value, section.value, startTime, endTime);
     if (json) {
       update(json.data);
     }
@@ -106,6 +114,8 @@ DashboardPage.propTypes = {
   semester: reactSelectDataType,
   course: reactSelectDataType,
   section: reactSelectDataType,
+  startTime: PropTypes.number.isRequired,
+  endTime: PropTypes.number.isRequired,
   setLoading: PropTypes.func.isRequired,
   updateSemesters: PropTypes.func.isRequired,
   updateCourses: PropTypes.func.isRequired,
@@ -119,6 +129,8 @@ function mapStateToProps(state) {
     course: state.course,
     section: state.section,
     loading: state.loading,
+    startTime: state.startTime,
+    endTime: state.endTime,
   };
 }
 
