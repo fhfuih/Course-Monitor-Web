@@ -73,6 +73,7 @@ class MainDropdown extends Component {
           <BaseDropdown
             text="Section"
             name="section"
+            width={220}
             disabled={disabled}
             data={sectionList}
             value={section}
