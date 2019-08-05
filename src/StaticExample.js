@@ -2,7 +2,7 @@ import React from 'react';
 import { ResponsiveContainer, ComposedChart, XAxis, YAxis, Legend, Line, Tooltip, Area } from 'recharts';
 import { timeFormat } from 'd3-time-format';
 
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import AppBar from '@material-ui/core/AppBar';
