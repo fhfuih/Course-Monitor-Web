@@ -4,13 +4,16 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from './AppBar';
 import AppDrawer from './AppDrawer';
+import Footer from './Footer';
 
 const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   container: {
     width: '80%',
     margin: '0 auto',
+    padding: theme.spacing(1),
     paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(2),
   },
 });
 
@@ -32,7 +35,10 @@ class BodyWrapper extends Component {
         <AppBar onMenuClick={this.onToggleDrawer} />
         <AppDrawer open={drawerOpen} onClose={this.onCloseDrawer} />
         <div className={classes.toolbar} />
-        <main className={classes.container}>{children}</main>
+        <main className={classes.container}>
+          {children}
+          <Footer />
+        </main>
       </>
     );
   }
