@@ -42,6 +42,7 @@
         ],
         "react/require-default-props": [0],
         "react/forbid-prop-types": [0],
+        "react/prefer-stateless-function": [0],
         "prettier/prettier": [
             "warn",
             {
