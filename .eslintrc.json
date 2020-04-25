@@ -9,9 +9,9 @@
         "airbnb",
         "plugin:import/errors",
         "plugin:import/warnings",
-        "prettier",
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended",
+        "prettier",
         "prettier/react"
     ],
     "globals": {
@@ -48,7 +48,8 @@
             {
                 "singleQuote": true,
                 "printWidth": 100,
-                "trailingComma": "all"
+                "trailingComma": "all",
+                "endOfLine": "auto"
             }
         ]
     }

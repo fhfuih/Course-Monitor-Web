@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { reducer } from './reducer';
+import { reducer } from './redux/reducer';
 
 import './index.css';
 import App from './App';
 // import App from './StaticExample'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

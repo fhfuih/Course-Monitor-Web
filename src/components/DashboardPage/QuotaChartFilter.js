@@ -8,7 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import FilterIcon from '@material-ui/icons/MoreVert';
-import { toggleFilter } from '../../actions';
+import { toggleFilter } from '../../redux/actions';
 import pref from '../../preference';
 import filterType from '../../propTypes/filterType';
 

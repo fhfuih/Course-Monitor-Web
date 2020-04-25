@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { withStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import { selectSemester, selectCourse, selectSection } from '../../actions';
+import { selectSemester, selectCourse, selectSection } from '../../redux/actions';
 import reactSelectDataType from '../../propTypes/reactSelectDataType';
 import BaseDropdown from './BaseDropdown';
 
